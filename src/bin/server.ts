@@ -36,8 +36,7 @@ export async function APP(): Promise<NestFastifyApplication> {
         })
     )
         // Handling Errors globally overriding nestjs inbuilt ExceptionHandler
-        .useGlobalFilters(new AllExceptionsFilter(httpAdapter))
-        .setGlobalPrefix("/api");
+        .useGlobalFilters(new AllExceptionsFilter(httpAdapter));
 
     return app;
 }
